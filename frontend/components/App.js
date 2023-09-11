@@ -20,7 +20,7 @@ const e = { // This is a dictionary of validation error messages.
   agreementRequired: 'agreement is required',
   agreementOptions: 'agreement must be accepted',
 }
-const userSchema= yup object().shape({
+const userSchema= yup.object().shape({
   username: yup.string().trim()
   .required(e.usernameRequired)
   .min(3, e.usernameMin).max(20, e.usernameMax) ,
@@ -94,6 +94,7 @@ useEffect(() => {
     })
     .catch(err => {
       setServerFailure(err.response.data.message)
+      setServerSuccess()
       debugger
     })
     // ✨ TASK: IMPLEMENT YOUR SUBMIT HANDLER
